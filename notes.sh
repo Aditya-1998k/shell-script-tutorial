@@ -1,6 +1,4 @@
-
-
-#################################################
+==========================================================
 Writing first bash script
 >> vim shelltest.sh
 echo Hello World!
@@ -45,8 +43,27 @@ file permission
 >> chmod u+x shelltest.sh 
 >> ./shelltest.sh
 Hello World!
-##################################################
+=============================================================
+                  Variable
+=============================================================
+No space between variable name and =
 
+>> FIRST_NAME= Aditya
+>> echo $FIRST_NAME
+Aditya
+
+same way we can use variable in shell script
+
+>> vim hellovariable.sh
+#!/bin/bash
+
+FIST_NAME=Aditya
+LAST_NAME=Gupta
+echo hello $FIST_NAME $LAST_NAME
+
+>> chmod u+x hellovariable.sh
+>> ./hellovariable.sh
+hello Aditya Gupta
 
 
 
