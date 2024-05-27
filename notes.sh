@@ -1,4 +1,6 @@
 ==========================================================
+                shell script
+==========================================================
 Writing first bash script
 >> vim shelltest.sh
 echo Hello World!
@@ -66,7 +68,10 @@ echo hello $FIST_NAME $LAST_NAME
 hello Aditya Gupta
 
 -------------------------------
-We can also take input from user
+-------------------------------
+We can also take input from user 
+using read <variable_name>
+
 >> vi interactiveshell.sh
 #!/bin/bash
 
@@ -86,8 +91,33 @@ aditya
 what is your last name?
 gupta
 hello aditya gupta
+==================================================
+          POSITIONAL ARGUMENTS
+==================================================
+Arguments are a specific positions.
+commands can take in arguments at a specific
+position, counting from one ( 0 reserved for shell).
 
+>> echo Hello there
+     0    1    2
 
+>> vi posiargs.sh
+#!/bin/bash
+
+echo Hello $1 $2
+
+while running the file just give two argument
+for 1 and 2 position, zero position is reserved for
+shell.
+
+>> chmod u+x posiargs.sh
+>> ./posiargs.sh aditya gupta
+Hello aditya gupta
+
+so $1 -first positional argument
+   $2 -second positional argument
+   $3 -third positional argument
+======================================================
 
 
 
