@@ -65,6 +65,28 @@ echo hello $FIST_NAME $LAST_NAME
 >> ./hellovariable.sh
 hello Aditya Gupta
 
+-------------------------------
+We can also take input from user
+>> vi interactiveshell.sh
+#!/bin/bash
+
+echo what is your first name?
+read FIRST_NAME
+echo what is your last name?
+read LAST_NAME
+
+echo hello $FIRST_NAME $LAST_NAME
+
+when you will run
+-----------
+$ chmod u+x interactiveshell.sh 
+$ ./interactiveshell.sh 
+what is your first name?
+aditya
+what is your last name?
+gupta
+hello aditya gupta
+
 
 
 
