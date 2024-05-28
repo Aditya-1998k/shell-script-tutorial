@@ -118,6 +118,75 @@ so $1 -first positional argument
    $2 -second positional argument
    $3 -third positional argument
 ======================================================
+                   PIPING
+======================================================
+send command output to other command
+
+command one                pipe symbol                  command two
+------------               ----------                   ------------
+echo Hello world          echo hello |               echo hello | grep world
+
+
+>> ls -l /usr/bin | grep bash
+return all the file which have bash binary in the directory
+
+
+===========================================================
+                  INPUT/OUTPUT REDIRECTION
+===========================================================
+When we have to write something to a file or append we cannot use
+pipe symbol. we need to use > or >> sysmbol.
+
+>  symbol is write to a file (overwrite the file)
+>> symbol for apppend to a file
+
+>> echo Hello World! > hello.txt
+>> echo Hey there ! >> hello.txt
+
+>> cat hello.txt
+Hello World!
+Hey there !
+
+UseCase of this:
+  * Logging to a logfile (eg: using timestamps)
+  * Dynamically creating (config) files.
+
+Taking Input from the file
+-----------------------
+>> wc -w hello.txt
+here wc command will take hello.txt as positional 
+argument and print word count (-w) and also print hello.txt
+out= 6 hell.txt
+
+but i want to give file data as input not positional argument
+so that it will count word and return only number of word and
+not file name.
+
+we can achieve that by using < operator
+
+>> wc -w < hello.txt
+6
+
+
+Suppose you want to write something and when type EOF
+it will stop
+$ cat << EOF
+> I will 
+> wirte some
+> text here
+> EOF
+I will 
+wirte some
+text here
+
+
+Suppose you want to feed string into a command
+>> wc -w <<< "Hello there wordcount!"
+3
+
+
+
+
 
 
 
