@@ -184,8 +184,32 @@ Suppose you want to feed string into a command
 >> wc -w <<< "Hello there wordcount!"
 3
 
+========================================================
+                  TEST OPERATOR
+========================================================
+>> [ 1 = 1 ]
+>> echo $?
+0
+if true return 0
 
+>> [ hello = hello ]
+>> echo $?
+0
+if true return 0
 
+>> [ 1 = 0 ]
+>> echo $?
+1
+if false return 1
+
+>> [ 1 -eq 1 ]
+>> echo $?
+0
+
+===========================================================
+                    IF/ELIF/ELSE
+===========================================================
+>> vim 
 
 
 
