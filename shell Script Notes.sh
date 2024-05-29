@@ -174,7 +174,7 @@ $ cat << EOF
 > I will 
 > wirte some
 > text here
-> EOF
+EOF
 I will 
 wirte some
 text here
@@ -228,7 +228,7 @@ Oh you are the boss here
 gaditya@lptl-gaditya:~$ ./ifelifelse.sh help
 Just enter your username, duh!
 gaditya@lptl-gaditya:~$ ./ifelifelse.sh vijay
-I don't know who you are?
+I do not know who you are?
 
 
 
