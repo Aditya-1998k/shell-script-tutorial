@@ -209,7 +209,46 @@ if false return 1
 ===========================================================
                     IF/ELIF/ELSE
 ===========================================================
->> vim 
+create a file
+>> vi ifelifelse.sh
+#!/bin/bash
+
+if [ ${1,,} = aditya ]; then
+      echo "Oh you are the boss here"
+elif [ ${1,,} = help ]; then
+      echo "Just enter your username, duh!"
+else
+      echo "I don't know who you are?"
+fi
+
+gaditya@lptl-gaditya:~$ vi ifelifelse.sh
+gaditya@lptl-gaditya:~$ chmod u+x ifelifelse.sh 
+gaditya@lptl-gaditya:~$ ./ifelifelse.sh aditya
+Oh you are the boss here
+gaditya@lptl-gaditya:~$ ./ifelifelse.sh help
+Just enter your username, duh!
+gaditya@lptl-gaditya:~$ ./ifelifelse.sh vijay
+I don't know who you are?
+
+
+
+Format
+-----------------------------------------------------
+if [ expression 1 ]
+then
+   Statement(s) to be executed if expression 1 is true
+elif [ expression 2 ]
+then
+   Statement(s) to be executed if expression 2 is true
+elif [ expression 3 ]
+then
+   Statement(s) to be executed if expression 3 is true
+else
+   Statement(s) to be executed if no expression is true
+fi
+--------------------------------------------------------
+
+
 
 
 
