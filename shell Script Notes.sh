@@ -248,6 +248,35 @@ else
 fi
 --------------------------------------------------------
 
+========================================================
+                CASE STATEMENTS
+========================================================
+better than if/elif/else when
+ * checking for multiple values
+ * is easier to read
+
+
+>> vi login_case.sh
+
+#!/bin/bash
+
+case ${1,,} in  
+      herbert | aditya | administrator)
+          echo "Hello your are the boss here"
+          ;;
+      help)
+          echo "Just enter the username"
+          ;;
+      *)
+          echo "I don't know you who are you"
+  esac
+
+  Note:
+   * to close one statement use ;;
+   * for new statement statement)
+   * to close the case esac
+   * for all other value *)
+          
 
 
 
