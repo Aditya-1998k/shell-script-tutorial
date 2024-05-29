@@ -278,7 +278,20 @@ case ${1,,} in
    * for all other value *)
           
 
+====================================================
+           COMMENT IN SHELL SCRIPT
+==================================================
 
+<<comment
+ "Code" or "Comments"
+comment
+
+The word “comment” can be anything but it should be the same for ending the comment block.
+
+<<com
+echo"This doesn't echo"
+echo"Even this doesn't"
+com
 
 
 
