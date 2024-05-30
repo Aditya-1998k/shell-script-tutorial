@@ -364,14 +364,84 @@ EOF
 }
 showuptime
 
+<<comment
+gaditya@lptl-gaditya:~$ chmod u+x first_function.sh 
+gaditya@lptl-gaditya:~$ ./first_function.sh 
+------------------
+This machine has been up for 1 hour, 9 minutes
+it has been running since 2024-05-30 10:40:17
+------------------
+comment
 
+Note: what ever variable defined in function is by default global variable
 
+example:
+===============
+#!/bin/bash
+up="before"
+since="function"
+echo $up
+echo $since
 
+showuptime(){
+        up=$(uptime -p | cut -c4-)
+        since=$(uptime -s)
+        cat << EOF
+------------------
+This machine has been up for ${up}
+it has been running since ${since}
+-------------------
+EOF
+}
+showuptime
+echo $up
+echo $since
 
+<<output
+gaditya@lptl-gaditya:~$ ./first_function.sh 
+before
+function
+------------------
+This machine has been up for 1 hour, 17 minutes
+it has been running since 2024-05-30 10:40:17
+-------------------
+1 hour, 17 minutes
+2024-05-30 10:40:17
+output
 
+Note: to define local variable put local before defining variable
 
+#!/bin/bash
+up="before"
+since="function"
+echo $up
+echo $since
 
+showuptime(){
+        local up=$(uptime -p | cut -c4-)
+        local since=$(uptime -s)
+        cat << EOF
+------------------
+This machine has been up for ${up}
+it has been running since ${since}
+-------------------
+EOF
+}
+showuptime
+echo $up
+echo $since
 
+<<output
+gaditya@lptl-gaditya:~$ ./first_function.sh 
+before
+function
+------------------
+This machine has been up for 1 hour, 18 minutes
+it has been running since 2024-05-30 10:40:17
+-------------------
+before
+function
+output
 
 
 
