@@ -346,6 +346,23 @@ THREE
 FOUR
 FIVE
 
+=========================================================
+                    function
+=========================================================
+>> vi first_function.sh
+
+#!/bin/bash
+showuptime(){
+        up=$(uptime -p | cut -c4-)
+        since=$(uptime -s)
+        cat << EOF
+------------------
+This machine has been up for ${up}
+it has been running since ${since}
+-------------------
+EOF
+}
+showuptime
 
 
 
