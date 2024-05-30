@@ -279,7 +279,7 @@ case ${1,,} in
           
 
 ====================================================
-           COMMENT IN SHELL SCRIPT
+        MULTILINE COMMENT IN SHELL SCRIPT
 ==================================================
 
 <<comment
@@ -296,6 +296,74 @@ com
 =======================================================
         ARRAYS IN SHELL SCRIPT
 =======================================================
+
+$ MY_FIRST_LIST=(ONE TWO THREE FOUR FIVE)
+$ echo $MY_FIRST_LIST
+>> ONE
+printing only first element
+To print all element
+
+$ echo ${MY_FIRST_LIST[@]}
+ONE TWO THREE FOUR FIVE
+
+We can also define which element we want to print
+$ echo ${MY_FIRST_LIST[0]}
+ONE
+$ echo ${MY_FIRST_LIST[1]}
+TWO
+
+======================================================
+                   FOR LOOP
+======================================================
+write a shell script to count each element length 
+using wc command
+
+$ for item in ${MY_FIRST_LIST[@]}; do echo -n $item | wc -c; done
+3
+3
+5
+4
+4
+
+
+Printing all element in array using for loop
+for item in ${MY_FIRST_LIST[@]}; do echo -n $item |echo $item; done
+ONE
+TWO
+THREE
+FOUR
+FIVE
+
+$ for item in ${MY_FIRST_LIST[@]}; do echo -n $item; done
+ONETWOTHREEFOURFIVE
+
+NOTE: here -n to ingore new line character
+
+$for item in ${MY_FIRST_LIST[@]}; do echo $item; done
+ONE
+TWO
+THREE
+FOUR
+FIVE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
