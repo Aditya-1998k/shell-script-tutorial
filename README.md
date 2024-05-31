@@ -1,4 +1,5 @@
-# Shell Script
+### Shell Script
+```
 * first shell script
 * variable
 * Positional Arguments
@@ -14,3 +15,4 @@
 * Function with arguments
 * AWK
 * SED
+```
