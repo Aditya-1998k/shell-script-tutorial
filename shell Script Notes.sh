@@ -595,6 +595,12 @@ To Delete line from range x to y
 -----------------------------
 >> sed '3, 5d' hell.txt
 
+If you want to create a backup file for your original file
+------------------------------
+>> sed -i.ORIGINAL 's/unix/linux/g' hell.txt
+
+it will create a backup file of hell.txt
+hell.txt.ORIGINAL
 
 
 
