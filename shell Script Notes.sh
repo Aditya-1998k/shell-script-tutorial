@@ -443,8 +443,100 @@ before
 function
 output
 
+=========================================================
+                function with Arguments
+=========================================================
+#!/bin/bash
 
+showname(){
+        echo hello $1
+        if [ ${1,,} = aditya ]; then
+                return 0
+        else
+                return 1
+        fi
+}
+showname $1
+if [ $? = 1 ]; then
+        echo "who you are I don't know you"
+fi
 
+<<comments
+Note: while calling the function what ever we give in front of 
+him, will be argument for that function
+
+gaditya@lptl-gaditya:~/instances$ ./function_with_args.sh aditya
+hello aditya
+gaditya@lptl-gaditya:~/instances$ ./function_with_args.sh Mohan
+hello Mohan
+who you are I don't know you
+-----------
+comments
+
+==============================================================
+                         AWK
+==============================================================
+(a) Scans a file line by line 
+(b) Splits each input line into fields 
+(c) Compares input line/fields to pattern 
+(d) Performs action(s) on matched lines 
+
+By default Awk prints every line of data from the specified file
+------------------------------------------------------
+>> cat > employee.txt
+ajay manager account 45000
+sunil clerk account 25000
+varun manager sales 50000
+
+>> awk '{print}' employee.txt
+It will print by default all the lines of the file employee.txt
+
+Printing Specific lines
+---------------------
+>> awk '{print $1}' employee.txt
+print fist lines
+>> awk '{print $2}' employee.txt
+print 2nd lines
+
+Print the lines which match the given pattern
+------------------------------------
+>> awk '/manager/ {print}' employee.txt
+print all the lines which contains manager
+ajay manager account 45000
+varun manager sales 50000
+
+Splitting a Line Into Fields
+--------------------------
+Note: the awk command splits the record delimited by whitespace
+character by default and stores it in the $n variables.
+If the line has 4 words, it will be stored in $1, $2, $3 and $4 respectively.
+Also, $0 represents the whole line.  
+
+>> awk '{print $1,$4}' employee.txt
+it will print first and 4rth coloum
+
+ajay 45000
+sunil 25000
+varun 50000
+
+>> vi csvtest.csv
+one,two,three
+
+>> awk -F, '{print $1}' csvtest.csv
+one
+
+Note: Use F (here comma) for the input field separator
+
+-----------------------------------------------------
+          PIPING WITH AWK
+-----------------------------------------------------
+>> echo "Just get this word: Hello" | awk '{print $5}'
+Hello
+
+>> echo "Just get this word: Hello" | awk -F: '{print $2}' | cut -c2-
+Hello
+ -F:  will seperate base on (:)
+ 
 
 
 
