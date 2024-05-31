@@ -1,4 +1,5 @@
 ### Shell Script
+[visit here for tutorial notes and bonus project](https://github.com/herbertech/bash-intro-tutorial)
 ```
 * first shell script
 * variable
