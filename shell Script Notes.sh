@@ -491,12 +491,12 @@ varun manager sales 50000
 >> awk '{print}' employee.txt
 It will print by default all the lines of the file employee.txt
 
-Printing Specific lines
+Printing Specific word
 ---------------------
 >> awk '{print $1}' employee.txt
-print fist lines
+print first word before whitespace or first coloumn
 >> awk '{print $2}' employee.txt
-print 2nd lines
+print 2nd word after whitespace or 2nd coloumn
 
 Print the lines which match the given pattern
 ------------------------------------
@@ -535,6 +535,7 @@ Hello
 
 >> echo "Just get this word: Hello" | awk -F: '{print $2}' | cut -c2-
 Hello
+Note:
  -F:  will seperate base on (:)
  
 
