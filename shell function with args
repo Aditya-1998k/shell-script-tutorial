@@ -1,0 +1,23 @@
+#!/bin/bash
+
+showname(){
+        echo hello $1
+        if [ ${1,,} = aditya ]; then
+                return 0
+        else
+                return 1
+        fi
+}
+showname $1
+if [ $? = 1 ]; then
+        echo "who you are I don't know you"
+fi
+
+<<comments
+gaditya@lptl-gaditya:~/instances$ ./function_with_args.sh aditya
+hello aditya
+gaditya@lptl-gaditya:~/instances$ ./function_with_args.sh Mohan
+hello Mohan
+who you are I don't know you
+-----------
+comments
