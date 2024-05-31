@@ -538,6 +538,68 @@ Hello
 Note:
  -F:  will seperate base on (:)
  
+=======================================================
+             SED Commands
+=======================================================
+SED command in UNIX stands for stream editor and it can perform
+lots of functions on file like searching, find and replace,
+insertion or deletion. Though most common use of SED command 
+in UNIX is for substitution or for find and replace. 
+
+>> vi hello.txt
+unix is great os. unix is opensource. unix is free os.
+learn operating system.
+unix linux which one you choose.
+unix is easy to learn.unix is a multiuser os.Learn unix .unix is a powerful.
+
+substitution
+------------
+>> sed 's/unix/linux/' hell.txt
+
+linux is great os. unix is opensource. unix is free os.
+learn operating system.
+linux linux which one you choose.
+linux is easy to learn.unix is a multiuser os.Learn unix .unix is a powerful.
+
+Note: By default it will find and substitute first occurance
+      Here 's' specifies substitution operation.
+
+Replacing nth occurance
+--------------------
+>> sed 's/unix/linux/2' hell.txt
+unix is great os. linux is opensource. unix is free os.
+learn operating system.
+unix linux which one you choose.
+unix is easy to learn.linux is a multiuser os.Learn unix .unix is a powerful.
+
+Replacing all occurances
+------------------------
+>> sed 's/unix/linux/g' hell.txt
+linux is great os. linux is opensource. linux is free os.
+learn operating system.
+linux linux which one you choose.
+linux is easy to learn.linux is a multiuser os.Learn linux .linux is a powerful.
+
+Replacing from nth occurance to all occurance in line
+---------------------------------------------------
+>> sed 's/unix/linux/2g' hell.txt
+Replacing on specific line number
+>> sed '3 s/unix/linux/2g' hell.txt
+
+Deleting lines from a particular file
+-----------------------------------
+>> sed 'nd' <file_name>
+>> sed '2d' hell.txt
+
+To Delete line from range x to y
+-----------------------------
+>> sed '3, 5d' hell.txt
+
+
+
+
+
+
 
 
 
